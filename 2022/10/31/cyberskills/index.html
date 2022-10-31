@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="IntroductionCyberskills was a part ctf, part real boring cybersecurity stuff event. I was in a mixed team with two good friends of mine. We ended up winning, but as we were a mixed team, we were not e">
+    <meta name="description" content="IntroductionCyberskills was a part ctf, part real boring cybersecurity stuff event for highschool students. I was in a mixed team with two good friends of mine. We ended up winning, but as we were a m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cyberskills 2022">
 <meta property="og:url" content="http://example.com/2022/10/31/cyberskills/index.html">
 <meta property="og:site_name" content="Waihu">
-<meta property="og:description" content="IntroductionCyberskills was a part ctf, part real boring cybersecurity stuff event. I was in a mixed team with two good friends of mine. We ended up winning, but as we were a mixed team, we were not e">
+<meta property="og:description" content="IntroductionCyberskills was a part ctf, part real boring cybersecurity stuff event for highschool students. I was in a mixed team with two good friends of mine. We ended up winning, but as we were a m">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-10-31T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-31T19:38:46.412Z">
+<meta property="article:modified_time" content="2022-10-31T19:46:09.691Z">
 <meta property="article:author" content="Waihu">
 <meta name="twitter:card" content="summary">
     
@@ -142,7 +142,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cyberskills was a part ctf, part real boring cybersecurity stuff event. I was in a mixed team with two good friends of mine. We ended up winning, but as we were a mixed team, we were not eligible for prizes.</p>
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cyberskills was a part ctf, part real boring cybersecurity stuff event for highschool students. I was in a mixed team with two good friends of mine. We ended up winning, but as we were a mixed team, we were not eligible for prizes.</p>
 <h3 id="Reversing-Snake-whisperer"><a href="#Reversing-Snake-whisperer" class="headerlink" title="Reversing: Snake whisperer"></a>Reversing: Snake whisperer</h3><p>This was a fun little challenge. Through accessing a webpage, we got the source code for a classic snake game made in pygame. On the webpage we also had an input for a betaskip-code. Looking through the source code we see two interesting functions called <code>loadSecretTextFileBETA</code> and <code>verifyLevelCode</code>. Let’s take a look at <code>loadSecretTextFileBETA</code>:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">loadSecretTextFileBETA</span>(<span class="params">level</span>):                          <span class="comment">#Spændende</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        filePointer = <span class="built_in">open</span>(<span class="string">&quot;./secretScoreBETASKIP.txt&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> ruhRoh:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;File likely not found.&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    secretCode = filePointer.readline()</span><br><span class="line">    <span class="built_in">print</span>(secretCode)</span><br><span class="line">    level.verifyLevelCode(secretCode)</span><br></pre></td></tr></table></figure>
 
